@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/drawable/ic_picture.xml" value="0.2824074074074074" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/drawable/roundbutton.xml" value="0.21944444444444444" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/drawable/roundbuybutton.xml" value="0.21944444444444444" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/drawable/strike_through.xml" value="0.29010416666666666" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/activity_main.xml" value="0.3223958333333333" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/activity_product_details2.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/activity_reset_password.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/activity_splashscreen.xml" value="0.3177083333333333" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/activity_user_profile.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/app_bar_main.xml" value="0.3223958333333333" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/content_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/fragment_home.xml" value="0.2713541666666667" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/fragment_user_profile.xml" value="0.3109375" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/nav_header_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/product_cardview.xml" value="0.25729166666666664" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/menu/activity_main_drawer.xml" value="0.4" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/menu/menuSearch.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/menu/search_menu.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

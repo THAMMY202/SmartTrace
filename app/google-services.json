@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "901070684163",
+    "project_id": "smarttrace-a4133",
+    "storage_bucket": "smarttrace-a4133.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901070684163:android:f23f4ec39df551f5abce36",
+        "android_client_info": {
+          "package_name": "com.smart.trace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901070684163-qkku06gfmhqbffp9dqub756m9vorn3hc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxQgZTVfNnVUQDlboLsaFw1YUu-cMoJ6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901070684163-qkku06gfmhqbffp9dqub756m9vorn3hc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
