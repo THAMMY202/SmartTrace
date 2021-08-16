@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartTrace">
         <activity
+            android:name=".DashBoardActivity"
+            android:exported="true"
+            android:label="@string/title_activity_dash_board"
+            android:theme="@style/Theme.SmartTrace.NoActionBar" />
+        <activity
             android:name=".ProductDetailsActivity2"
             android:exported="true" />
         <activity

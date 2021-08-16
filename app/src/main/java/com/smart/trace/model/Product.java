@@ -7,6 +7,30 @@ public class Product {
     private String serialNumber;
     private String picture;
     private String price;
+    private String condition;
+    private String key;
+    private String seller;
+    private String sellerUserID;
+
+    public String getSellerUserID() {
+        return sellerUserID;
+    }
+
+    public void setSellerUserID(String sellerUserID) {
+        this.sellerUserID = sellerUserID;
+    }
+
+
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+
+
 
     public String getSeller() {
         return seller;
@@ -16,7 +40,7 @@ public class Product {
         this.seller = seller;
     }
 
-    private String seller;
+
 
     public String getPrice() {
         return price;
@@ -26,9 +50,9 @@ public class Product {
         this.price = price;
     }
 
-    private String key;
 
-    public Product(String name, String maker, String model, String serialNumber, String picture, String key,String price,String seller) {
+
+    public Product(String name, String maker, String model, String serialNumber, String picture, String key,String price,String seller,String condition,String sellerUserID) {
         this.name = name;
         this.maker = maker;
         this.model = model;
@@ -37,6 +61,8 @@ public class Product {
         this.key = key;
         this.price = price;
         this.seller = seller;
+        this.condition = condition;
+        this.sellerUserID = sellerUserID;
     }
 
     public String getName() {

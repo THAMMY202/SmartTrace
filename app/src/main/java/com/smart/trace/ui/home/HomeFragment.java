@@ -88,11 +88,10 @@ public class HomeFragment extends Fragment  {
     }
 
     private void getAllAvailableProduct(){
-        //Product(String name, String maker, String model, String serialNumber, String picture, String key)
-        productArrayList.add(new Product("Notebook","DELL","10th GEN","SN123456","http://via.placeholder.com/300.png","","150.00","cash crusaders"));
-        productArrayList.add(new Product("iPhone","Apple","iPhone 8 Plus","SN123456","http://via.placeholder.com/300.png","","230.00","Thamsanqa Shabalala"));
-        productArrayList.add(new Product("Galaxy A32","Samsung Electronics","A10","SN123456","http://via.placeholder.com/300.png","","1500.00","cash converters"));
-        productArrayList.add(new Product("LapTop","DELL","10th GEN","SN123456","http://via.placeholder.com/300.png","","25.000","cash converters"));
+        productArrayList.add(new Product("Notebook","DELL","10th GEN","SN123456","http://via.placeholder.com/300.png","","150.00","cash crusaders","New",""));
+        productArrayList.add(new Product("iPhone","Apple","iPhone 8 Plus","SN123456","http://via.placeholder.com/300.png","","230.00","Thamsanqa Shabalala","second hand",""));
+        productArrayList.add(new Product("Galaxy A32","Samsung Electronics","A10","SN123456","http://via.placeholder.com/300.png","","1500.00","cash converters","New",""));
+        productArrayList.add(new Product("LapTop","DELL","10th GEN","SN123456","http://via.placeholder.com/300.png","","25.000","cash converters","Good condition",""));
 
         productAdapter = new ProductAdapter(getActivity(),productArrayList);
         recyclerViewProducts.setAdapter(productAdapter);

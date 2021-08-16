@@ -17,4 +17,10 @@
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_user_profile"/>
 
+    <activity
+        android:id="@+id/nav_upload"
+        android:name="com.smart.trace.DashBoardActivity"
+        tools:layout="@layout/activity_dash_board"
+        />
+
 </navigation>

@@ -56,8 +56,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         buttonSignIn = findViewById(R.id.loginBtn);
         buttonSignIn.setOnClickListener(this);
 
-        inputEmail = findViewById(R.id.Email);
-        inputPassword = findViewById(R.id.password);
+        inputEmail = findViewById(R.id.emailSignIn);
+        inputPassword = findViewById(R.id.passwordSignIn);
 
         textViewNewAccount = findViewById(R.id.createText);
         textViewNewAccount.setOnClickListener(this);
