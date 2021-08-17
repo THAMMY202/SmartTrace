@@ -157,7 +157,8 @@ public class UploadFragment extends Fragment {
                             newImage.put("key", mItemDatabase.getKey());
                             newImage.put("sellerUserID", userID);
 
-                            mItemDatabase.child(mItemDatabase.getKey()).push().setValue(newImage);
+                            //mItemDatabase.child(mItemDatabase.getKey()).push().setValue(newImage);
+                            mItemDatabase.push().setValue(newImage);
                             Toast.makeText(getContext(), "Item uploaded",Toast.LENGTH_SHORT).show();
                         }
                         else {
