@@ -17,6 +17,12 @@
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_user_profile"/>
 
+    <fragment
+        android:id="@+id/nav_black_list"
+        android:name="com.smart.trace.BlackListItemFragment"
+        android:label="@string/menu_black_list"
+        tools:layout="@layout/fragment_black_list_item"/>
+
     <activity
         android:id="@+id/nav_upload"
         android:name="com.smart.trace.DashBoardActivity"

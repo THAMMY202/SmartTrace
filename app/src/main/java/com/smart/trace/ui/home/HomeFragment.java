@@ -48,11 +48,8 @@ public class HomeFragment extends Fragment  {
         userID = mAuth.getCurrentUser().getUid();
         mAlbumsDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
-        getdata();
-
         initView(root);
-        //getAllAvailableProduct();
-
+        getdata();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -92,7 +89,7 @@ public class HomeFragment extends Fragment  {
         searchView = (SearchView) view.findViewById(R.id.searchView);
     }
 
-    private void getAllAvailableProduct(){
+   /* private void getAllAvailableProduct(){
         productArrayList.add(new Product("Notebook","DELL","10th GEN","SN123456","http://via.placeholder.com/300.png","","150.00","cash crusaders","New",""));
         productArrayList.add(new Product("iPhone","Apple","iPhone 8 Plus","SN123456","http://via.placeholder.com/300.png","","230.00","Thamsanqa Shabalala","second hand",""));
         productArrayList.add(new Product("Galaxy A32","Samsung Electronics","A10","SN123456","http://via.placeholder.com/300.png","","1500.00","cash converters","New",""));
@@ -101,7 +98,7 @@ public class HomeFragment extends Fragment  {
         productAdapter = new ProductAdapter(getActivity(),productArrayList);
         recyclerViewProducts.setAdapter(productAdapter);
         recyclerViewProducts.setLayoutManager(new LinearLayoutManager(getActivity()));
-    }
+    }*/
 
     private void getdata() {
 
@@ -133,7 +130,7 @@ public class HomeFragment extends Fragment  {
 
                     Product  product  = new Product();
 
-                    product.setKey(ds.getKey());
+                    product.setKey(ds.child("key").getValue().toString());
                     product.setPicture(ds.child("picture").getValue().toString());
                     product.setName(ds.child("name").getValue().toString());
                     product.setModel(ds.child("model").getValue().toString());

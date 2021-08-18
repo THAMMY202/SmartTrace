@@ -19,8 +19,12 @@
 
         <item
             android:id="@+id/nav_upload"
-            android:icon="@drawable/payment"
+            android:icon="@drawable/selling"
             android:title="@string/menu_upload" />
 
+        <item
+            android:id="@+id/nav_black_list"
+            android:icon="@drawable/complaint"
+            android:title="@string/menu_black_list" />
     </group>
 </menu>

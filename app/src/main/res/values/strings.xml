@@ -12,6 +12,7 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_payment">Payment</string>
     <string name="menu_upload">Selling Item</string>
+    <string name="menu_black_list">Blacklist Item</string>
     <string name="menu_search">Search</string>
 
     <string name="name">Developed by Group 19</string>

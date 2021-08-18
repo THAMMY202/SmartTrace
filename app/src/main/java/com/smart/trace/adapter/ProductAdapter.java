@@ -72,6 +72,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 intent.putExtra("pMaker", product.getMaker());
                 intent.putExtra("pModel", product.getModel());
                 intent.putExtra("pSeller", product.getSeller());
+                intent.putExtra("pBuyerUserID", "");
                 context.startActivity(intent);
             }
         });

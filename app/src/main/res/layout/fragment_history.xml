@@ -3,10 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HistoryFragment">
+    tools:context=".HistoryFragment"
+    android:layout_margin="@dimen/fab_margin">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_gravity="center"
+        android:id="@+id/recyclerViewHistoryProducts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <TextView
         android:layout_gravity="center"
+        android:id="@+id/textViewNoResult"
         android:text="No history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

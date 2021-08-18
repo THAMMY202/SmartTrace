@@ -11,6 +11,7 @@ public class Product {
     private String key;
     private String seller;
     private String sellerUserID;
+    private String buyerUserID;
 
     public String getSellerUserID() {
         return sellerUserID;
@@ -20,7 +21,13 @@ public class Product {
         this.sellerUserID = sellerUserID;
     }
 
+    public String getBuyerUserID() {
+        return buyerUserID;
+    }
 
+    public void setBuyerUserID(String buyerUserID) {
+        this.buyerUserID = buyerUserID;
+    }
 
     public String getCondition() {
         return condition;
@@ -52,7 +59,7 @@ public class Product {
 
 
 
-    public Product(String name, String maker, String model, String serialNumber, String picture, String key,String price,String seller,String condition,String sellerUserID) {
+    public Product(String name, String maker, String model, String serialNumber, String picture, String key,String price,String seller,String condition,String sellerUserID,String buyerUserID) {
         this.name = name;
         this.maker = maker;
         this.model = model;
@@ -63,6 +70,7 @@ public class Product {
         this.seller = seller;
         this.condition = condition;
         this.sellerUserID = sellerUserID;
+        this.buyerUserID = buyerUserID;
     }
 
     public String getName() {

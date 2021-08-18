@@ -193,6 +193,7 @@ public class SignUpActivity extends AppCompatActivity {
                             userInfo.put("type", userRole);
                             userInfo.put("key", userID);
                             userInfo.put("picture", "0");
+
                             if (userRole.equals("Organisation")) {
                                 userInfo.put("organisationName", OrgName);
                                 userInfo.put("organisationPhone", OrgPhone);

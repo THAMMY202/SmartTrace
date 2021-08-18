@@ -17,12 +17,14 @@
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/activity_user_profile.xml" value="0.264" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/app_bar_main.xml" value="0.3223958333333333" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/content_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/fragment_black_list_item.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/fragment_dash_board.xml" value="0.22291666666666668" />
-        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/fragment_history.xml" value="0.4" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/fragment_history.xml" value="0.264" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/fragment_home.xml" value="0.2713541666666667" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/fragment_upload.xml" value="0.264" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/fragment_user_profile.xml" value="0.3109375" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/nav_header_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/pop_up_user_profile.xml" value="0.3411458333333333" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/layout/product_cardview.xml" value="0.25729166666666664" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/menu/activity_main_drawer.xml" value="0.4" />
         <entry key="..\:/AndroidProjects/SmartTrace2/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
