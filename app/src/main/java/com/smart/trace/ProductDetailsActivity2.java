@@ -1,7 +1,12 @@
 package com.smart.trace;
 
+import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.text.SpannableString;
@@ -111,12 +116,16 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 String  currentDateTimeString = DateFormat.getDateTimeInstance()
                         .format(new Date());
-                String transferSMS = "Hi "+ buyerFullname  + " you are now the legal owner of the below item as from "+currentDateTimeString
+                /*String transferSMS = "Hi "+ buyerFullname  + " you are now the legal owner of the below item as from "+currentDateTimeString
                         +"\n "+
                         "Item name: " +pName +"\n "+
                         "Maker: " +pMaker +"\n "+
                         "Item Model: " +pModel +"\n "+
-                        "Item SerialNumber: " +pSNumber;
+                        "Item SerialNumber: " +pSNumber;*/
+
+                String transferSMS = "Hi "+ buyerFullname + " you are now the legal owner of the below item "
+                        +"Item name " +pName + " Maker " +pMaker +
+                        " Item Model " +pModel + " Item SerialNumber " +pSNumber;
 
                 new AlertDialog.Builder(ProductDetailsActivity2.this)
                         .setTitle("Transfer OF Ownership")
@@ -170,16 +179,91 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
 
     }
 
+
+    private void sendSMS(String phoneNumber, String message)
+    {
+        String SENT = "SMS_SENT";
+        String DELIVERED = "SMS_DELIVERED";
+
+        PendingIntent sentPI = PendingIntent.getBroadcast(this, 0,
+                new Intent(SENT), 0);
+
+        PendingIntent deliveredPI = PendingIntent.getBroadcast(this, 0,
+                new Intent(DELIVERED), 0);
+
+        //---when the SMS has been sent---
+        registerReceiver(new BroadcastReceiver(){
+            @Override
+            public void onReceive(Context arg0, Intent arg1) {
+                switch (getResultCode())
+                {
+                    case Activity.RESULT_OK:
+                        //Toast.makeText(getBaseContext(), "SMS sent",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
+                       // Toast.makeText(getBaseContext(), "Generic failure",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmsManager.RESULT_ERROR_NO_SERVICE:
+                        Toast.makeText(getBaseContext(), "No service",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmsManager.RESULT_ERROR_NULL_PDU:
+                        Toast.makeText(getBaseContext(), "Null PDU",
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmsManager.RESULT_ERROR_RADIO_OFF:
+                        Toast.makeText(getBaseContext(), "Radio off",
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        }, new IntentFilter(SENT));
+
+        //---when the SMS has been delivered---
+        registerReceiver(new BroadcastReceiver(){
+            @Override
+            public void onReceive(Context arg0, Intent arg1) {
+                switch (getResultCode())
+                {
+                    case Activity.RESULT_OK:
+                        //Toast.makeText(getBaseContext(), "SMS delivered",Toast.LENGTH_SHORT).show();
+                        break;
+                    case Activity.RESULT_CANCELED:
+                        Toast.makeText(getBaseContext(), "SMS not delivered",
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        }, new IntentFilter(DELIVERED));
+
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage(phoneNumber, null, message, sentPI, deliveredPI);
+    }
+
+    /*public void sendSMS(String phoneNo, String msg) {
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, msg, null, null);
+            Toast.makeText(getApplicationContext(), "Message Sent",
+                    Toast.LENGTH_LONG).show();
+        } catch (Exception ex) {
+            Toast.makeText(getApplicationContext(),ex.getMessage().toString(),
+                    Toast.LENGTH_LONG).show();
+            ex.printStackTrace();
+        }
+    }
+
     public void sendSMS(String phoneNo, String msg) {
         try {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(phoneNo, null, msg, null, null);
-
+            Toast.makeText(ProductDetailsActivity2.this, "Message Sent",
+                    Toast.LENGTH_LONG).show();
         } catch (Exception ex) {
-
+            Toast.makeText(ProductDetailsActivity2.this, "Message not Sent",
+                    Toast.LENGTH_LONG).show();
             ex.printStackTrace();
         }
-    }
+    }*/
 
     private void getBuyerUserInfo(String buyerUserID) {
         DatabaseReference mBuyerDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(buyerUserID);
