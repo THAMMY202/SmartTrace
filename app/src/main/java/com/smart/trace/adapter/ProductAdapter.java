@@ -73,6 +73,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 intent.putExtra("pModel", product.getModel());
                 intent.putExtra("pSeller", product.getSeller());
                 intent.putExtra("pBuyerUserID", "");
+                intent.putExtra("pSerialNumber", product.getSerialNumber());
                 context.startActivity(intent);
             }
         });

@@ -3,6 +3,7 @@ package com.smart.trace;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
@@ -26,6 +27,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -40,12 +43,14 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
     private TextView textViewProductPrice;
     private TextView textViewProductSeller;
     private Button buttonBuy,buttonTransfer;
-    private String buyer,buyerFullname;
+    private String buyer,buyerFullname,buyerPhone;
     private boolean showBuyerInfo;
 
     private EditText editTextName,editTextSurname,editTextEmail,editTextPhone,editTextOrgName,editTextOrgPhone,editTextOrgEmail;
     private CircleImageView mPicture;
     private CardView cardViewStoreInfo;
+
+    private String pName,pSNumber,pMaker,pModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +76,11 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
         textViewProductMaker.setText(getIntent().getStringExtra("pMaker"));
         textViewProductModel.setText(getIntent().getStringExtra("pModel"));
         textViewProductPrice.setText("R " + getIntent().getStringExtra("pPrice"));
+
+        pName =getIntent().getStringExtra("pName");
+        pSNumber =getIntent().getStringExtra("pSerialNumber");
+        pMaker =getIntent().getStringExtra("pMaker");
+        pModel =getIntent().getStringExtra("pModel");
 
 
         if(buyer.isEmpty()){
@@ -99,6 +109,15 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
         buttonTransfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String  currentDateTimeString = DateFormat.getDateTimeInstance()
+                        .format(new Date());
+                String transferSMS = "Hi "+ buyerFullname  + " you are now the legal owner of the below item as from "+currentDateTimeString
+                        +"\n "+
+                        "Item name: " +pName +"\n "+
+                        "Maker: " +pMaker +"\n "+
+                        "Item Model: " +pModel +"\n "+
+                        "Item SerialNumber: " +pSNumber;
+
                 new AlertDialog.Builder(ProductDetailsActivity2.this)
                         .setTitle("Transfer OF Ownership")
                         .setMessage("Please note that " + buyerFullname +" will become the new legal owner of this item. press Continue to confirm")
@@ -106,11 +125,15 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
                         .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                Toast.makeText(ProductDetailsActivity2.this, "Yaay", Toast.LENGTH_SHORT).show();
+                                sendSMS(buyerPhone,transferSMS);
+                                Toast.makeText(ProductDetailsActivity2.this, "Transferred", Toast.LENGTH_SHORT).show();
                             }})
                         .setNegativeButton(android.R.string.no, null).show();
             }
         });
+
+
+
 
         textViewProductSeller.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,6 +170,17 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
 
     }
 
+    public void sendSMS(String phoneNo, String msg) {
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, msg, null, null);
+
+        } catch (Exception ex) {
+
+            ex.printStackTrace();
+        }
+    }
+
     private void getBuyerUserInfo(String buyerUserID) {
         DatabaseReference mBuyerDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(buyerUserID);
         mBuyerDatabase.addValueEventListener(new ValueEventListener() {
@@ -164,6 +198,10 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
                         textViewProductSeller.setTextColor(getResources().getColor(R.color.linkColor));
                     }
 
+                    if(map.get("phone")!=null){
+                        buyerPhone = map.get("phone").toString();
+                    }
+
                     if(showBuyerInfo){
                         if(map.get("firstName")!=null){
                             editTextName.setText(map.get("firstName").toString());
@@ -173,9 +211,6 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
                             editTextSurname.setText(map.get("lastName").toString());
                         }
 
-                        if(map.get("email")!=null){
-                            editTextEmail.setText(map.get("email").toString());
-                        }
 
                         if(map.get("email")!=null){
                             editTextEmail.setText(map.get("email").toString());

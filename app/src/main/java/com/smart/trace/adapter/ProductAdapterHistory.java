@@ -68,6 +68,7 @@ public class ProductAdapterHistory extends RecyclerView.Adapter<ProductAdapterHi
                 intent.putExtra("pModel", product.getModel());
                 intent.putExtra("pSeller", product.getSeller());
                 intent.putExtra("pBuyerUserID", product.getBuyerUserID());
+                intent.putExtra("pSerialNumber", product.getSerialNumber());
                 context.startActivity(intent);
             }
         });
